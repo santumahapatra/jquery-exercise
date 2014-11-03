@@ -1,0 +1,11 @@
+body{
+}
+
+.movable{
+  position: absolute;
+  left:48%;
+  top:48%;
+  height: 50px;
+  width: 50px;
+  background-color: blue;
+}
