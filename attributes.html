@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>attributeEquals demo</title>
+  <script src="scripts/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+ 
+<div>
+  <label>
+    <input type="radio" name="business[name]" value="Hot Fuzz">
+    <span>name?</span>
+  </label>
+</div>
+<div>
+  <label>
+    <input type="radio" name="singly_owned_business[name]" value="Cold Fusion">
+    <span>value?</span>
+  </label>
+</div>
+<div>
+  <label>
+    <input type="radio" name="newsletter" value="Evil Plans">
+    <span>value?</span>
+  </label>
+</div>
+
+<div class="foo" data-name="cat">
+  Hello
+</div>
+
+<div class="foo" data-name="dog">
+  Hello
+</div>
+ 
+<script>
+//$( "input[value='Hot Fuzz']" ).next().text( "Hot Fuzz" );
+//$( "input[name= 'business[name]' ]" ).next().text( "Hot Fuzz" );
+//$( "input[name $= 'business[name]' ]" ).next().text( "Hot Fuzz" );
+//$( ".foo[data-name='cat']" ).text( "Hot Fuzz for Cat" );
+//$( ".foo[data-name='dog']" ).text( "Hot Fuzz for Dog" );
+var animals = function(animalCollection){
+  var animals = [];
+  animalCollection.each(function(){
+    animals.push($(this).data('name'));
+  });
+  console.log(animals);
+}
+
+var animalCollection = $( ".foo[data-name]" );
+animalCollection.text( "Hot Fuzz" );
+animals(animalCollection);
+</script>
+ 
+</body>
+</html>
